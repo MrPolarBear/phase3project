@@ -46,7 +46,7 @@ Please review the full analysis in the Jupyter Notebooks:
 - Contains first models made by using Logreg and DTC.
 - Almost all features were used.
 - Dropped features with too many nulls.
-- The logs for gs performances in this notebook (Modeling_Work_1_Logreg_DTC) is under [log_dtc_model_1.txt](./log_dtc_model_1.txt) and [log_logreg_model_1.txt](./log_logreg_model_1.txt)
+- The logs for gs performances in this notebook (Modeling_Work_1_Logreg_DTC) is under [log_dtc_model_1.txt](./model_gs_logs/log_dtc_model_1.txt) and [log_logreg_model_1.txt](./model_gs_logs/log_logreg_model_1.txt)
 - Ultimately decided not to use these models because using less features, as shown in next workbooks, proved to be better.
 - Image below is confusion matrix of best model
 
@@ -59,7 +59,7 @@ Please review the full analysis in the Jupyter Notebooks:
 - Ultimately, decided not to use Logreg when GridSearched upon.
 - Results were about worse.
 - Best confusion matrix below for this notebook
-- Logs for gs performances is under [log_logreg_model_2.txt](./log_logreg_model_2.txt)
+- Logs for gs performances is under [log_logreg_model_2.txt](./model_gs_logs/log_logreg_model_2.txt)
 
 ![work2_best_model](./images/Modeling_Work_2_Logreg_best.png)    
 <br>
@@ -69,7 +69,7 @@ Please review the full analysis in the Jupyter Notebooks:
 - This model provided best results.
 - More features were dropped, ones deemed irrelevant from the corr map.
 - Improved a bit. Best confusion matrix below. This is also the confusion matrix for best model used.
-- Logs for gs performances is under [log_dtc_model_2.txt](./log_dtc_model_2.txt)
+- Logs for gs performances is under [log_dtc_model_2.txt](./model_gs_logs/log_dtc_model_2.txt)
 
 ![work3_best_model](./images/Modeling_Work_3_DTC_best.png)    
 
@@ -77,8 +77,10 @@ Please review the full analysis in the Jupyter Notebooks:
 
 By dropping a few features, I was able to predict about 84.5% of the time correctly on who would get the H1N1 vaccine or not.
 <br>
+Below is the results of the best model run on the untouched test data.
+<br>
 
-Inside the notepad files (.txt) are the logs for Gridsearches across all the notebooks. Titles
+![final_model_test](./images/final_model_conf.png)   
 
 ## Conclusions
 
