@@ -23,10 +23,16 @@ Data was provided by DrivenData.org from the contest 'Flu Shot Learning: Predict
 
 ### Notebook Guide:
 Please review the full analysis in the Jupyter Notebooks: 
-- [EDA and Initial Models](./code/EDA_and_Initial_Models.ipynb)
-- [First 2 Models (Logreg and DTC) with most features](./code/Modeling_Work_1_Logreg_DTC.ipynb)
-- [Logreg Model with less features](./code/Modeling_Work_2_Logreg.ipynb)
-- [DTC Model with less features](./code/Modeling_Work_3_DTC.ipynb)
+<br>
+Notebooks:
+- [EDA_and_Initial_Models](./code/EDA_and_Initial_Models.ipynb)
+    - EDA and Initial Models
+- [Modeling_Work_1_Logreg_DTC](./code/Modeling_Work_1_Logreg_DTC.ipynb)
+    - First 2 Models (Logreg and DTC) with most features
+- [Modeling_Work_2_Logreg](./code/Modeling_Work_2_Logreg.ipynb)
+    - Logreg Model with less features
+- [Modeling_Work_3_DTC](./code/Modeling_Work_3_DTC.ipynb)
+    - DTC Model with less features
 - [Presentation Here](./H1N1_Flu.pdf).
 
 ### EDA_and_Initial_Models
