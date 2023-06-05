@@ -1,0 +1,190 @@
+========================================================================================
+Iteration 1:
+
+parameters = {'dtc_smote__criterion': ['gini', 'entropy'],
+          'dtc_smote__min_samples_leaf': [6, 10, 15],
+          'sm__k_neighbors': [3, 4, 5],
+          'sm__sampling_strategy':['auto', 0.4287, 0.6667]}
+		  
+		  
+best params:
+{'dtc_smote__criterion': 'gini',
+ 'dtc_smote__min_samples_leaf': 15,
+ 'sm__k_neighbors': 4,
+ 'sm__sampling_strategy': 0.4287}
+ 
+		  
+gs_pipe.print_cv_summary()		  
+	CV Results for `gs_dtc_model` model:
+            0.83458 ± 0.00809 accuracy
+		  
+gs.best_estimator_.score(X_valid, y_valid)
+			0.8349142952238309
+
+classification report below
+              precision    recall  f1-score   support
+
+           0       0.89      0.91      0.90      4781
+           1       0.61      0.54      0.57      1228
+
+    accuracy                           0.83      6009
+   macro avg       0.75      0.73      0.74      6009
+weighted avg       0.83      0.83      0.83      6009
+
+
+
+Summary: Moving forward, will look at gini only
+
+========================================================================================
+Iteration 2: 
+
+parameters = {'dtc_smote__criterion': ['gini'],
+          'dtc_smote__min_samples_leaf': [15, 20, 25, 30],
+          'sm__k_neighbors': [3, 4, 5],
+          'sm__sampling_strategy':[0.4287, 0.5477, 0.6667]}
+		  
+		  
+best params:
+{'dtc_smote__criterion': 'gini',
+ 'dtc_smote__min_samples_leaf': 30,
+ 'sm__k_neighbors': 3,
+ 'sm__sampling_strategy': 0.4287}
+ 
+		  
+gs_pipe.print_cv_summary()		  
+	CV Results for `gs_dtc_model` model:
+            0.83785 ± 0.00461 accuracy
+		  
+gs.best_estimator_.score(X_valid, y_valid)
+			0.8415709768680313
+
+
+classification report below
+              precision    recall  f1-score   support
+           0       0.89      0.92      0.90      4781
+           1       0.63      0.54      0.58      1228
+
+    accuracy                           0.84      6009
+   macro avg       0.76      0.73      0.74      6009
+weighted avg       0.83      0.84      0.84      6009
+
+
+Summary: Will run again, honing down on the sampling strategy
+
+========================================================================================
+Iteration : 3, 4, 5
+Iter 5 is recorded here.
+
+parameters = {'dtc_smote__criterion': ['gini'],
+          'dtc_smote__min_samples_leaf': [25, 30],
+ 3         'sm__k_neighbors': [2, 3, 4],
+          'sm__sampling_strategy':[0.4287, 0.4822, 0.5477]}
+
+			{'dtc_smote__criterion': ['gini'],
+          'dtc_smote__min_samples_leaf': [30],
+  4        'sm__k_neighbors': [2, 3, 4],
+          'sm__sampling_strategy':[0.4287, 0.4584, 0.4822]}
+		  
+		  {'dtc_smote__criterion': ['gini'],
+          'dtc_smote__min_samples_leaf': [30],
+  5        'sm__k_neighbors': [2, 3, 4],
+          'sm__sampling_strategy':[0.4287, 0.4435, 0.4584]}
+		  
+		  
+best params:
+{'dtc_smote__criterion': 'gini',
+ 'dtc_smote__min_samples_leaf': 30,
+ 'sm__k_neighbors': 2,
+ 'sm__sampling_strategy': 0.4435}
+ 
+		  
+gs_pipe.print_cv_summary()		  
+	CV Results for `gs_dtc_model` model:
+            0.83824 ± 0.00799 accuracy
+		  
+gs.best_estimator_.score(X_valid, y_valid)
+			0.8439008154435014
+
+
+classification report below
+              precision    recall  f1-score   support
+
+           0       0.89      0.92      0.90      4781
+           1       0.64      0.54      0.59      1228
+
+    accuracy                           0.84      6009
+   macro avg       0.76      0.73      0.75      6009
+weighted avg       0.84      0.84      0.84      6009
+
+
+Summary: about .002 change in score from honing in sampling strategy. Will use this sampling size and continue
+			tuning samples leaf
+
+========================================================================================
+Iteration : 6
+
+parameters = {'dtc_smote__criterion': ['gini'],
+          'dtc_smote__min_samples_leaf': [30, 40, 50],
+          'sm__k_neighbors': [2, 3, 4],
+          'sm__sampling_strategy':[0.4435]}
+
+		  
+best params:
+{'dtc_smote__criterion': 'gini',
+ 'dtc_smote__min_samples_leaf': 40,
+ 'sm__k_neighbors': 3,
+ 'sm__sampling_strategy': 0.4435}
+ 
+		  
+gs_pipe.print_cv_summary()		  
+	CV Results for `gs_dtc_model` model:
+            0.83991 ± 0.00813 accuracy
+		  
+gs.best_estimator_.score(X_valid, y_valid)
+			0.8410717257447162
+
+
+classification report below
+              precision    recall  f1-score   support
+
+           0       0.89      0.92      0.90      4781
+           1       0.63      0.54      0.58      1228
+
+    accuracy                           0.84      6009
+   macro avg       0.76      0.73      0.74      6009
+weighted avg       0.83      0.84      0.84      6009
+
+
+Summary:
+
+seemed like it honed down as much as possible. 
+	40 min samples leaf
+	3 k neighbors
+	sampling strat for smote: .4435
+
+
+========================================================================================
+Template
+========================================================================================
+Iteration : 
+
+parameters = 
+		  
+		  
+best params:
+
+ 
+		  
+gs_pipe.print_cv_summary()		  
+	CV Results for `gs_dtc_model` model:
+            
+		  
+gs.best_estimator_.score(X_valid, y_valid)
+			
+
+
+classification report below
+
+
+
+Summary:

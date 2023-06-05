@@ -1,0 +1,159 @@
+========================================================================================
+Iteration : 1
+
+parameters = 
+params['ct__subpipe_num__num_impute__strategy'] = ['mean','median']
+params['logreg_basic__penalty'] = ['l1','l2','none'] 
+params['logreg_basic__max_iter'] = [100, 150]
+params['logreg_basic__C'] = [1, 0.1, 0.01]
+params['logreg_basic__solver'] = ['liblinear','saga','lbfgs']
+params['logreg_basic__tol'] = [0.00009, 0.0001, 0.00011]		  
+		  
+best params:
+{'ct__subpipe_num__num_impute__strategy': 'median',
+ 'logreg_basic__C': 0.1,
+ 'logreg_basic__max_iter': 100,
+ 'logreg_basic__penalty': 'l2',
+ 'logreg_basic__solver': 'saga',
+ 'logreg_basic__tol': 0.0001}
+ 
+		  
+gs_pipe.print_cv_summary()		  
+	CV Results for `gs_dtc_model` model:
+            0.85050 ± 0.00771 accuracy
+		  
+gs.best_estimator_.score(X_valid, y_valid)
+			0.85050 ± 0.00771 accuracy
+
+
+classification report below
+              precision    recall  f1-score   support
+
+           0       0.88      0.94      0.91      4781
+           1       0.70      0.50      0.58      1228
+
+    accuracy                           0.85      6009
+   macro avg       0.79      0.72      0.75      6009
+weighted avg       0.84      0.85      0.84      6009
+
+
+Summary: wel. slightly better. Will keep tol at 0.0001. trying one more time to see which is better with higher iter
+
+========================================================================================
+Iteration : 2 + 3
+
+parameters = 
+params['ct__subpipe_num__num_impute__strategy'] = ['mean','median']
+params['logreg_basic__penalty'] = ['l1','l2','none'] 
+params['logreg_basic__max_iter'] = [100, 1000]
+params['logreg_basic__C'] = [0.075, 0.1, 0.125]
+params['logreg_basic__solver'] = ['liblinear','saga','lbfgs']
+params['logreg_basic__tol'] = [0.0001]		  
+		  
+best params:
+ 'logreg_basic__C': 0.075,
+ 'logreg_basic__max_iter': 100,
+ 'logreg_basic__penalty': 'l2',
+ 'logreg_basic__solver': 'saga',
+ 'logreg_basic__tol': 0.0001}
+ 
+		  
+gs_pipe.print_cv_summary()		  
+	CV Results for `gs_dtc_model` model:
+            0.85056 ± 0.00781 accuracy
+		  
+gs.best_estimator_.score(X_valid, y_valid)
+			0.853053752704277
+
+
+classification report below
+              precision    recall  f1-score   support
+
+           0       0.88      0.94      0.91      4781
+           1       0.70      0.50      0.58      1228
+
+    accuracy                           0.85      6009
+   macro avg       0.79      0.72      0.75      6009
+weighted avg       0.84      0.85      0.84      6009
+
+
+Summary: slightly better again. Will keep it as l1, l2 and none, saga supports all 3
+	hone on C
+	no need for more than 100 max iter
+	tol stays the same
+
+
+Iteration 3 yielded the same results. Assuming line ends here
+========================================================================================
+Iteration : 4
+
+parameters = 
+params['ct__subpipe_num__num_impute__strategy'] = ['mean','median']
+params['logreg_basic__penalty'] = ['l1','l2','none'] 
+params['logreg_basic__max_iter'] = [100]
+params['logreg_basic__C'] = [0.06, 0.075, 0.09]
+params['logreg_basic__solver'] = ['saga']
+params['logreg_basic__tol'] = [0.0001]		  
+		  
+best params:
+{'ct__subpipe_num__num_impute__strategy': 'median',
+ 'logreg_basic__C': 0.1,
+ 'logreg_basic__max_iter': 100,
+ 'logreg_basic__penalty': 'l2',
+ 'logreg_basic__solver': 'saga',
+ 'logreg_basic__tol': 0.0001}
+
+ 
+		  
+gs_pipe.print_cv_summary()		  
+	CV Results for `gs_dtc_model` model:
+            
+		  
+gs.best_estimator_.score(X_valid, y_valid)
+			
+
+
+classification report below
+
+
+
+Summary:
+
+Didnt bother to fill in. Results are the same as before. Just going to rerun iter 2+3 and use that as best model.
+
+
+
+
+
+
+
+
+
+
+
+
+========================================================================================
+Template
+========================================================================================
+Iteration : 
+
+parameters = 
+		  
+		  
+best params:
+
+ 
+		  
+gs_pipe.print_cv_summary()		  
+	CV Results for `gs_dtc_model` model:
+            
+		  
+gs.best_estimator_.score(X_valid, y_valid)
+			
+
+
+classification report below
+
+
+
+Summary:
